@@ -1,0 +1,10 @@
+package com.vinicius.ProjetoWebService.serviços;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import com.vinicius.ProjetoWebService.repositorios.UsuarioRepositorio;
+
+public class UsuarioServiço {
+	
+	@Autowired
+	private UsuarioRepositorio usuarioRepositorio;
+}
