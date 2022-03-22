@@ -1,0 +1,5 @@
+package com.vinicius.ProjetoWebService.entidades.enums;
+
+public enum PedidoStatus {
+
+}
