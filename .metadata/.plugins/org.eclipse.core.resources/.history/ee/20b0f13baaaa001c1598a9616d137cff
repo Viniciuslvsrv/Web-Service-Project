@@ -1,0 +1,60 @@
+package com.vinicius.ProjetoWebService.entidades;
+
+import java.io.Serializable;
+import java.util.Objects;
+
+import com.vinicius.ProjetoWebService.entidades.pk.PedidoItemPK;
+
+public class PedidoItem implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+
+	private PedidoItemPK id;
+	
+	private Integer quantidade;
+	private Double preço;
+	
+	public PedidoItem() {
+
+	}
+	
+	public PedidoItem(Integer quantidade, Double preço) {
+		super();
+		this.quantidade = quantidade;
+		this.preço = preço;
+	}
+
+	public Integer getQuantidade() {
+		return quantidade;
+	}
+
+	public void setQuantidade(Integer quantidade) {
+		this.quantidade = quantidade;
+	}
+
+	public Double getPreço() {
+		return preço;
+	}
+
+	public void setPreço(Double preço) {
+		this.preço = preço;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(id);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		PedidoItem other = (PedidoItem) obj;
+		return Objects.equals(id, other.id);
+	}
+	
+}

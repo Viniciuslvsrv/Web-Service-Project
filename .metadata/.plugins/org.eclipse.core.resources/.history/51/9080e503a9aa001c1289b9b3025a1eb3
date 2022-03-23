@@ -1,0 +1,5 @@
+package com.vinicius.ProjetoWebService.entidades.pk;
+
+public class PedidoItemPK {
+
+}

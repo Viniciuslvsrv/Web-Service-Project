@@ -1,0 +1,24 @@
+package com.vinicius.ProjetoWebService.entidades;
+
+import com.vinicius.ProjetoWebService.entidades.pk.PedidoItemPK;
+
+public class PedidoItem {
+	
+	private PedidoItemPK id;
+	
+	private Integer quantidade;
+	private Double preço;
+	
+	public PedidoItem() {
+
+	}
+	
+	public PedidoItem(PedidoItemPK id, Integer quantidade, Double preço) {
+		super();
+		this.id = id;
+		this.quantidade = quantidade;
+		this.preço = preço;
+	}
+	
+	
+}
