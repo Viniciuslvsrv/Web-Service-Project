@@ -9,12 +9,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Produto implements Serializable {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -22,13 +25,15 @@ public class Produto implements Serializable {
 	private String descriçao;
 	private Double preço;
 	private String imgUrl;
-	
+
+	@ManyToMany
+	@JoinTable(name = "produto_categoria", joinColumns = @JoinColumn(name = "produtoId"), inverseJoinColumns = @JoinColumn(name = "categoriaId"))
 	private Set<Categoria> categorias = new HashSet<>();
 
 	public Produto() {
 
 	}
-	
+
 	public Produto(Long id, String name, String descriçao, Double preço, String imgUrl) {
 		super();
 		this.id = id;
@@ -98,5 +103,5 @@ public class Produto implements Serializable {
 		Produto other = (Produto) obj;
 		return Objects.equals(id, other.id);
 	}
-	
+
 }
