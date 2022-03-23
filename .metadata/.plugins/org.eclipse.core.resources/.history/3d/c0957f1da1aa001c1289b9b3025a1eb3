@@ -1,0 +1,18 @@
+package com.vinicius.ProjetoWebService.entidades;
+
+public class Categoria {
+		
+	private Long id;
+	private String name;
+	
+	public Categoria() {
+
+	}
+	
+	public Categoria(Long id, String name) {
+		super();
+		this.id = id;
+		this.name = name;
+	}
+
+}
