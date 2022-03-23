@@ -1,0 +1,11 @@
+package com.vinicius.ProjetoWebService.entidades;
+
+import java.time.Instant;
+
+public class Pagamento {
+	
+	private Long id;
+	private Instant momento;
+	
+	private Pedido pedido;
+}
