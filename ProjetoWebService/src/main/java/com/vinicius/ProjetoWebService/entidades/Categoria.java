@@ -1,7 +1,9 @@
 package com.vinicius.ProjetoWebService.entidades;
 
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,6 +19,8 @@ public class Categoria implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
+	
+	private Set<Produto> produtos = new HashSet<>();
 	
 	public Categoria() {
 
@@ -43,7 +47,11 @@ public class Categoria implements Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
-
+	
+	public Set<Produto> getProdutos() {
+		return produtos;
+	}
+	
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);

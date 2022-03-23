@@ -1,0 +1,12 @@
+package com.vinicius.ProjetoWebService.entidades;
+
+public class Produtos {
+	
+	private Long id;
+	private String name;
+	private String descriçao;
+	private Double preço;
+	private String imgUrl;
+	
+	private Set<Categoria> categorias = new HashSet<>(;)
+}

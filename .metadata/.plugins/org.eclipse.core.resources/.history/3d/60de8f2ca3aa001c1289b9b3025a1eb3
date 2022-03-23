@@ -1,0 +1,16 @@
+package com.vinicius.ProjetoWebService.entidades;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class Produtos {
+	
+	private Long id;
+	private String name;
+	private String descriçao;
+	private Double preço;
+	private String imgUrl;
+	
+	private Set<Categoria> categorias = new HashSet<>();
+	
+}
