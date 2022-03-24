@@ -25,4 +25,8 @@ public class UsuarioServiço {
 		 return obj.get();
 	}
 	
+	public Usuario inserçao (Usuario usuario) {
+		return usuarioRepositorio.save(usuario);
+	}
+	
 }
