@@ -30,7 +30,7 @@ public class UsuarioServiço {
 	}
 	
 	public void deletar (Long id) {
-		 usuarioRepositorio.deleteById(id);
+		return usuarioRepositorio.save(usuario);
 	}
 	
 }
