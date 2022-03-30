@@ -3,6 +3,8 @@ package com.vinicius.ProjetoWebService.serviços;
 import java.util.List;
 import java.util.Optional;
 
+import javax.persistence.EntityNotFoundException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -33,21 +35,25 @@ public class UsuarioServiço {
 		return usuarioRepositorio.save(usuario);
 	}
 
-	public void deletar (Long id) {
+	public void deletar(Long id) {
 		try {
 			usuarioRepositorio.deleteById(id);
-		}catch (EmptyResultDataAccessException e) {
+		} catch (EmptyResultDataAccessException e) {
 			throw new RecursoNaoEncontradoExceçao(id);
-		}catch (DataIntegrityViolationException e) {
+		} catch (DataIntegrityViolationException e) {
 			throw new BancoDeDadosExceçao(e.getMessage());
 		}
 	}
 
 	public Usuario atualizaçao(Long id, Usuario usuario) {
-		Usuario usuarioAux = usuarioRepositorio.getOne(id);
-		atualizarDados(usuarioAux, usuario);
+		try {
+			Usuario usuarioAux = usuarioRepositorio.getOne(id);
+			atualizarDados(usuarioAux, usuario);
 
-		return usuarioRepositorio.save(usuarioAux);
+			return usuarioRepositorio.save(usuarioAux);
+		}catch (EntityNotFoundException e) {
+			throw new RecursoNaoEncontradoExceçao(id);
+		}
 	}
 
 	private void atualizarDados(Usuario usuarioAux, Usuario usuario) {
