@@ -1,0 +1,5 @@
+package com.vinicius.ProjetoWebService.recursos.exceçoes;
+
+public class ManipuladorExceçoes {
+
+}

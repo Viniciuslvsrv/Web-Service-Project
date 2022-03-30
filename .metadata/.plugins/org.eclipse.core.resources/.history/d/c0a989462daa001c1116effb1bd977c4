@@ -1,9 +1,0 @@
-package com.vinicius.ProjetoWebService.repositorios;
-
-import org.springframework.data.jpa.repository.JpaRepository;
-
-import com.vinicius.ProjetoWebService.entidades.Usuario;
-
-public interface PedidoRepositorio extends JpaRepository<Pedido, Long> {
-
-}

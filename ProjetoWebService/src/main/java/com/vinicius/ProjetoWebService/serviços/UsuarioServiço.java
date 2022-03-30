@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.vinicius.ProjetoWebService.entidades.Usuario;
 import com.vinicius.ProjetoWebService.repositorios.UsuarioRepositorio;
+import com.vinicius.ProjetoWebService.serviços.exceções.RecursoNaoEncontradoExceçao;
 
 @Service
 public class UsuarioServiço {
@@ -22,7 +23,7 @@ public class UsuarioServiço {
 	public Usuario buscarPorId(Long id) {
 		 Optional<Usuario> obj =  usuarioRepositorio.findById(id);
 		 
-		 return obj.get();
+		 return obj.orElseThrow(() -> new RecursoNaoEncontradoExceçao(id));
 	}
 	
 	public Usuario inserçao (Usuario usuario) {
