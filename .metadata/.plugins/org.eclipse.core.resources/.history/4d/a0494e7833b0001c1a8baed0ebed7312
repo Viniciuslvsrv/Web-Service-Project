@@ -1,0 +1,5 @@
+package com.vinicius.ProjetoWebService.serviços.exceções;
+
+public class BancoDeDadosExceçao {
+
+}
